@@ -1,0 +1,75 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+      width: 912px;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('static/img/1.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+      color: #fff;
+}
+</style>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--1-tablet mdl-cell--1-phone"></div>
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--6-tablet mdl-cell--2-phone">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Task Done</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <h3>Task Part #1: Web App</h3>
+                    <p><strong>Database:</strong> Sqlite or MongoDB</p>
+                    <p><strong>Web Framework:</strong> Flask</p>
+
+                    <p><strong>Login Page:</strong>
+                    <p> A page where users can access the app and dashboard.</p> 
+                    <p>A feature to create an account.</p>
+
+                    <p><strong>Dashboard:</strong></p>
+                    <p> A view which shows products from the attached orders csv in a table.</p> 
+                    <p>The table should contain only the following columns:</p>
+                    <ul>
+                        <li> Order ID</li>
+                        <li>  Product Name</li>
+                        <li> Order Status</li>
+                        <li>  Product URL (should be a hyperlink)</li>
+                        <li>Cost Price (attached CSV has the cost price in Dollars. The view should contain the cost price in indian rupees. 1 USD = 66 INR.)</li>
+
+                        <p>We should be able to sort orders using the Order Status.</p>
+                    <br>
+                    
+                    <h3>Part II: Scrapy integration Task</h3>
+                    <p>Create a page with a simple button with which a Scrapy spider can be deployed. The details of the working of the spider are as follows:</p>
+
+                    <p></strong>Framework for Crawlers:</strong> Python/Scrapy</p>  
+                    <p></strong>Website to scrape:</strong> www.liveyoursport.com</p>
+                    <p><strong>What to Scrape:</strong> Scrape all products(including all paginations) under the category Squash on LiveYourSport.com. For every product, extract the Product Name, Price, Description(without HTML Tags)  and URL and store it in a CSV file. Each row of the output CSV file should correspond to different products. Please refer to the attached Sample Scrape csv for the desired output format.</p>
+    
+                    <p><strong>File Handling:</strong> Once the scrape is finished, the output csv file should be available to download from a file management page on the app.</p>
+
+
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a href="/register" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                     Review Task
+                    </a>
+                </div>
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                        <i class="material-icons">share</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--1-tablet mdl-cell--1-phone"></div>
+</div>
+
+
+{% endblock %}

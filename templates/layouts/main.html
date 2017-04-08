@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+    <head>
+        <meta charset='UTF-8'>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </head>
+<body>
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+.demo-layout-transparent {
+      background: url('https://images.unsplash.com/photo-1434626982825-b030fb94f5be?dpr=1&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=&bg=') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+      /* This background is dark, so we set text to white. Use 87% black instead if
+              your background is light. */
+      color: white;
+}
+ ul,li {list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        text-decoration:none; }
+</style>
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Live Your Sport</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <ul class="mdl-navigation">
+                <li {% if request.endpoint == 'home' %} class="active" {% endif %}>
+                    <a href="{{ url_for('home') }}" class="mdl-navigation__link" style="color:black;text-decoration:none">
+                        <i class="material-icons">home</i>
+                    Home
+                    </a>
+                </li>
+                <li {% if request.endpoint == 'about' %} class="active" {% endif %}>
+                <a href="{{ url_for('about') }}" class="mdl-navigation__link" style="color:black;text-decoration:none">
+                    <i class="material-icons">info</i>
+                    About
+                </a>
+                </li>
+                </ul>
+                <a href="{{ url_for('register') }}" style="color:black;text-decoration:none">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        Sign Up
+                    </button>
+                </a>&nbsp;
+               
+                <a href="{{ url_for('login') }}" style="color:black;text-decoration:none">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        Login
+                    </button>
+                </a>
+        </div>
+    </header>
+        <!--div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="" style="coloe:black;">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div-->
+    <main class="mdl-layout__content">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="background-color:white;" class="alert alert-block alert-error fade in mdl-dialog md-dialog__content">
+                        <a class="close " data-dismiss="alert" style="coloe:white;">&times;</a>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+
+    </main>
+</div>
+
+</body>
+</html>
