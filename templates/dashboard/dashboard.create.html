@@ -1,6 +1,13 @@
 {% extends 'layouts/dashboard.html' %}
 {% block title %}Create Order{% endblock %}
 {% block content %}
+
+{% if error %}
+    <div style="background-color:white;" class="alert alert-block alert-error fade in mdl-dialog md-dialog__content">
+        <a class="close " data-dismiss="alert" style="coloe:white;">&times;</a>
+        {{ error }}
+    </div>
+{% endif %}
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col mdl-cell--1-tablet mdl-cell--1-phone"></div>
         <div class="mdl-cell mdl-cell--4-col mdl-cell--6-tablet mdl-cell--2-phone">
