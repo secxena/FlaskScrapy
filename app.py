@@ -5,16 +5,13 @@
 from flask import Flask, flash,render_template,redirect,url_for,request,session
 from flask import send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
-import logging
+import logging,csv,os
 from functools import wraps
 from sqlalchemy.exc import IntegrityError
 from logging import Formatter, FileHandler
 from forms import *
-from models import db,app,bcrypt
-from models import User
-import csv
-import os
-from subprocess import call
+from models import db,app,bcrypt,User
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -169,7 +166,7 @@ def spider():
     status_code=200
     flash("It Normally takes 5 Minutes,Please wait after deploying ")
     if request.method == 'POST':
-        call(["scrapy","crawl", "lys"])
+        os.system('scrapy crawl lys &')
         return redirect(url_for('download'))
     return render_template('dashboard/dashboard.spider.html',error=error),status_code
 
