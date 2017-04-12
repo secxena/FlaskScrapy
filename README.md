@@ -5,3 +5,6 @@
 * Front End: MDL , Bootstrap
 * javascript
 * scrapy
+* Gunicorn
+* Nginx
+* Supervisor
