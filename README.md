@@ -6,6 +6,8 @@
 A Flask boilerplate for scraping work.
 I searched web when I needed a scraping(scrapy) boilerplate but didn't find anything useful.So I decided to make a scraping starter project.
 
+![Flask-Scrapy](http://i.makeagif.com/media/5-18-2017/U5_Vut.gif)
+
 # Features
 
 - [x] User account sign up, sign in.
