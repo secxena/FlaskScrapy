@@ -1,6 +1,8 @@
 
 # Flask-Scrapy
 
+![License](http://img.shields.io/:license-mit-blue.svg)
+
 A Flask boilerplate for scraping work.
 I searched web when I needed a scraping(scrapy) boilerplate but didn't find anything useful.So I decided to make a scraping starter project.
 
