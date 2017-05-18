@@ -20,7 +20,7 @@ I searched web when I needed a scraping(scrapy) boilerplate but didn't find anyt
 - [ ] task queue support, celery
 
 
-# Library
+# Full Stack
 
 * Database: Sqlite 
 * Web Framework: Flask
@@ -40,20 +40,16 @@ Install all dependency via
 pip install -r requirements.txt
 ```
 
-### Installing
+### Deployment
 
 Follow the guide 
-* [realpython guide](https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/)- Follow step by step tutorial.
+* [Kickstarting flask on ubuntu](https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/)
 
-Trying on local machine
+Trying on local machine, just hit
 
 ```
 python app.py
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
